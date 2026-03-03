@@ -1,0 +1,24 @@
+# Environment variables
+.env
+.env.*
+
+# Generated video outputs
+*.mp4
+*.mov
+*.avi
+output_*/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
