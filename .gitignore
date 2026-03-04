@@ -7,6 +7,8 @@
 *.mov
 *.avi
 output_*/
+quality_test_result*.json
+quality_*.mp4
 
 # Python
 __pycache__/
