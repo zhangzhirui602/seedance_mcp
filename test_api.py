@@ -15,7 +15,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--prompt", default="一只橙色的猫在草地上打哈欠", help="视频提示词")
     parser.add_argument("--model", default="doubao-seedance-1-5-pro-251215", help="模型名称")
     parser.add_argument("--resolution", default="480p", help="视频分辨率，例如 480p/720p/1080p")
-    parser.add_argument("--ratio", default="16:9", help="视频比例，例如 16:9/9:16/1:1")
+    parser.add_argument("--ratio", default="9:16", help="视频比例，例如 16:9/9:16/1:1")
     parser.add_argument("--duration", type=int, default=5, help="视频时长（秒）")
     parser.add_argument("--watermark", action="store_true", help="开启水印")
     return parser.parse_args()
