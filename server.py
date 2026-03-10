@@ -159,7 +159,7 @@ def poll_task(task_id: str, interval_seconds: int = 10, max_wait_seconds: int = 
     }
 
 
-@mcp.tool()
+@mcp.tool(description="根据文本提示词生成视频。将 prompt 发送给 Seedance API 创建视频生成任务并轮询至完成。严禁未经用户确认 prompt 就直接调用此工具，必须先向用户展示完整 prompt 并获得明确确认后才可调用。")
 def text_to_video(
     prompt: str,
     model: str = DEFAULT_MODEL,
@@ -169,7 +169,6 @@ def text_to_video(
     watermark: bool = False,
     generate_audio: bool = False,
 ) -> Dict[str, Any]:
-    f"""{SEEDANCE_PROMPT_GUIDE}"""
     payload = {
         "model": model,
         "content": [
@@ -202,7 +201,7 @@ def text_to_video(
     return result
 
 
-@mcp.tool()
+@mcp.tool(description="根据图片和运动描述生成视频。将图片 URL 和 motion prompt 发送给 Seedance API 创建视频生成任务并轮询至完成。严禁未经用户确认 prompt 就直接调用此工具，必须先向用户展示完整 prompt 并获得明确确认后才可调用。")
 def image_to_video(
     image_url: str,
     motion_prompt: str,
@@ -213,7 +212,6 @@ def image_to_video(
     watermark: bool = False,
     generate_audio: bool = False,
 ) -> Dict[str, Any]:
-    f"""{SEEDANCE_PROMPT_GUIDE}"""
     content: List[Dict[str, Any]] = [
         {
             "type": "image_url",
